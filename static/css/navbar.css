@@ -1,0 +1,214 @@
+:root {
+    --sidebar-bg: #FFFFFF;
+    --sidebar-shadow: rgba(0,0,0,0.07);
+    --border-color: #E2E8F0;
+    --text-primary: #081021;
+    --text-secondary: #64748B;
+    --accent: #4F46E5;
+    --active-bg: #EEF2FF;
+    --active-text: #4F46E5;
+    --divider: #E2E8F0;
+    --hover-bg: rgba(79,70,229,0.1);
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: var(--sidebar-bg);
+    box-shadow: 0 16px 44px var(--sidebar-shadow);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding-top: 24px;
+    transition: width 0.3s;
+    overflow: visible;
+    z-index: 1000;
+  }
+  
+  .sidebar.collapsed {
+    width: 64px;
+  }
+  
+  .sidebar-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    width: 100%;
+    height: 80px;
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .sidebar.collapsed .logo-icon { opacity: 0; }
+  
+  .brand-name {
+    font-family: 'Poppins',sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--text-primary);
+    white-space: nowrap;
+    transition: opacity 0.3s;
+  }
+  
+  .sidebar.collapsed .brand-name { opacity: 0; }
+  
+  .expand-btn {
+    position: absolute;
+    top: 28px;
+    right: -12px;
+    width: 32px;
+    height: 32px;
+    background: var(--sidebar-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 1100;
+  }
+  
+  .expand-btn:hover { background: var(--hover-bg); }
+  
+  .sidebar.collapsed .expand-btn i {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+  }
+  
+  .sidebar-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    flex-grow: 1;
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    padding:0 8px;
+    gap:8px;
+    list-style:none;
+    margin:0;
+  }
+  
+  .nav-item {
+    display:flex;
+    align-items:center;
+    padding:8px;
+    gap:12px;
+    border-radius:999px;
+    width:100%;
+    cursor:pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  
+  .nav-item:hover { background: var(--hover-bg); transform: translateX(4px); }
+  
+  .nav-item.active { background: var(--active-bg); }
+  .nav-item .label {
+    font-family:'Poppins',sans-serif;
+    font-weight:500;
+    font-size:14px;
+    color: var(--text-primary);
+    transition: opacity 0.3s;
+    margin-left: 5px;
+    margin-top: 3px;
+  }
+  
+  .sidebar.collapsed .label { opacity:0; }
+  
+  .icon {
+    width:20px;
+    height:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color: var(--text-secondary);
+    transition: color 0.3s;
+  }
+  
+  .nav-item:hover .icon { color: var(--accent); }
+  
+  .nav-item.active .icon { color: var(--active-text); }
+  
+  .divider {
+    width:80%;
+    height:0;
+    border-top:1px solid var(--divider);
+    margin: 16px 0;
+  }
+  
+  .nav-secondary {
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    padding:0 8px;
+    gap:8px;
+    list-style:none;
+    margin:0;
+  }
+  
+  .sidebar-footer {
+    display:flex;
+    align-items:center;
+    padding:16px;
+    gap:8px;
+    width:100%;
+    border-top:1px solid var(--divider);
+    transition: justify-content 0.3s;
+  }
+  
+  .sidebar.collapsed .sidebar-footer { justify-content: center; gap:0; }
+  
+  .avatar {
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    flex-shrink:0;
+    transition: opacity 0.3s;
+  }
+  
+  .sidebar.collapsed .avatar { opacity:0; }
+  
+  .text-group {
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    transition: opacity 0.3s;
+    margin-left: 2px;
+  }
+  
+  .sidebar.collapsed .text-group { opacity:0; }
+  
+  .welcome { font-family:'Poppins',sans-serif; font-size:12px; color: var(--text-secondary); }
+  .username { font-family:'Poppins',sans-serif; font-size:14px; color: var(--text-primary); }
+  
+  .caret {
+    margin-left:auto;
+    color: var(--text-primary);
+    transition: transform 0.3s;
+    flex-shrink:0;
+  }
+  
+  .sidebar.collapsed .caret { transform: rotate(180deg); }

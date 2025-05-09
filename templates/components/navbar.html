@@ -1,0 +1,74 @@
+<nav class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="brand">
+        <img src="{{ url_for('static', filename='img/user.png') }}" alt="Logo" class="logo-icon" />
+        <span class="brand-name">ABC Solutions</span>
+      </div>
+      <button class="expand-btn" id="expandBtn" aria-label="Toggle sidebar">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+    </div>
+  
+    <div class="sidebar-main">
+      <!-- Primary Navigation -->
+      <ul class="nav">
+        <li class="nav-item {% if request.endpoint == 'dashboard' %}active{% endif %}">
+          <a href="{{ url_for('dashboard') }}" class="flex items-center">
+            <i class="icon fas fa-home"></i>
+            <span class="label">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="flex items-center">
+            <i class="icon fas fa-inbox"></i>
+            <span class="label">Reportes</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="flex items-center">
+            <i class="icon fas fa-chart-pie"></i>
+            <span class="label">Analytics</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="flex items-center">
+            <i class="icon fas fa-cog"></i>
+            <span class="label">Configuración</span>
+          </a>
+        </li>
+      </ul>
+  
+      <div class="divider"></div>
+  
+      <!-- Secondary Navigation -->
+      <ul class="nav nav-secondary">
+        <li class="nav-item">
+          <a href="#" class="flex items-center">
+            <i class="icon fas fa-bell"></i>
+            <span class="label">Notificaciones</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="flex items-center">
+            <i class="icon fas fa-question-circle"></i>
+            <span class="label">Ayuda</span>
+          </a>
+        </li>
+        <!-- Logout Button -->
+        <li class="nav-item">
+          <a href="#" class="flex items-center">
+            <i class="icon fas fa-sign-out-alt"></i>
+            <span class="label">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="sidebar-footer">
+      <img src="{{ url_for('static', filename='img/user.png') }}" alt="Avatar" class="avatar" />
+      <div class="text-group">
+        <span class="welcome">Welcome back 👋</span>
+        <span class="username">Johnathan</span>
+      </div>
+    </div>
+  </nav>

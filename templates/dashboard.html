@@ -1,0 +1,30 @@
+<!-- templates/dashboard.html -->
+{% extends 'base.html' %}
+
+{% block title %}Reportes Regalías{% endblock %}
+
+{% block content %}
+  <!-- Header -->
+  <header class="mb-8">
+    <h1 class="text-4xl font-semibold text-gray-100">Reportes Regalías</h1>
+  </header>
+
+  <!-- Tarjetas -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    {% for tipo, datos in regalias.items() %}
+      {% set mapping = {
+          'soundrecording': 'fas fa-compact-disc',
+          'publishing': 'fas fa-book',
+          'mlc': 'fas fa-music',
+          'sayco': 'fas fa-dollar-sign',
+          'sacam': 'fas fa-chart-bar'
+        } %}
+      {% include 'components/stat_card.html' with {
+          'tipo': tipo | capitalize,
+          'icon_class': mapping[tipo],
+          'total': datos.total,
+          'count': datos.count
+      } %}
+    {% endfor %}
+  </div>
+{% endblock %}
