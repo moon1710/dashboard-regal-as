@@ -1,0 +1,17 @@
+:root {
+    --sidebar-bg: #FFFFFF;
+    --sidebar-shadow: rgba(0,0,0,0.07);
+    --border-color: #E2E8F0;
+    --text-primary: #081021;
+    --text-secondary: #64748B;
+    --accent: #4F46E5;
+    --active-bg: #EEF2FF;
+    --active-text: #4F46E5;
+    --divider: #E2E8F0;
+    --hover-bg: rgba(79,70,229,0.1);
+  }
+
+header{
+    background-color: #081021;
+    color: #E2E8F0;
+}
