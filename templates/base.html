@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <title>{% block title %}Dashboard{% endblock %}</title>
 
     <!-- Tailwind CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 
     <!-- FontAwesome Free -->
     <link
@@ -22,21 +19,20 @@
 
     <!-- Navbar styles -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}"/>
 
     {% block head_extra %}{% endblock %}
   </head>
   <body class="bg-gray-100 font-sans flex">
 
-    <!-- Navbar -->
+    <!-- Sidebar -->
     {% include 'components/navbar.html' %}
 
     <!-- Main content -->
-    <div class="flex-1 ml-0 md:ml-72 p-6">
+    <div class="flex-1 ml-0 md:ml-64 p-6">
       {% block content %}{% endblock %}
     </div>
 
-    <!-- FontAwesome JS (para animaciones opcionales) -->
+    <!-- FontAwesome JS -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
       integrity="sha512-..."
@@ -44,7 +40,7 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <!-- Navbar toggle script -->
+    <!-- Navbar toggle -->
     <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
     {% block body_extra %}{% endblock %}
   </body>
